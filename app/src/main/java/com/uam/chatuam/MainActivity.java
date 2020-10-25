@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String messageSend = sendMessageEt.getText().toString();
                 if(messageSend.length()>0){
-                    sendMessage(messageSend,"usuario1@chatuam");
+                    sendMessage(messageSend,"1271221012@chatuam");
                 }
             }
         });
@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
     }
 
     private void setConnection(){
@@ -115,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 InetAddress addr = null;
                 try {
-                    addr = InetAddress.getByName("192.168.0.14");
+                    addr = InetAddress.getByName("192.168.0.2");
                 } catch (UnknownHostException e) {
                     e.printStackTrace();
                 }
@@ -127,12 +126,14 @@ public class MainActivity extends AppCompatActivity {
                 };
                 DomainBareJid serviceName = null;
                 try {
-                    serviceName = JidCreate.domainBareFrom("chatuam");
+                    serviceName = JidCreate.domainBareFrom("1324741040@chatuam");
                 } catch (XmppStringprepException e) {
                     e.printStackTrace();
                 }
+                
+
                 XMPPTCPConnectionConfiguration config = XMPPTCPConnectionConfiguration.builder()
-                        .setUsernameAndPassword("usuario1","Lossims4")
+                        .setUsernameAndPassword("1324741040","1106139")
                         .setPort(5222)
                         .setSecurityMode(ConnectionConfiguration.SecurityMode.disabled)
                         .setXmppDomain(serviceName)
@@ -180,10 +181,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
             }
         }.start();
-
-
     }
 }
